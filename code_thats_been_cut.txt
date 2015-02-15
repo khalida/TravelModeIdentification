@@ -1,0 +1,46 @@
+	// Save current selected mode if user leaves and returns to App, or process is killed by system
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+		// Save UI state changes to the savedInstanceState.
+		// This bundle will be passed to onCreate if the process is
+		// killed and restarted.
+		savedInstanceState.putString("stringOut", stringOut);
+		writeToFile(stringOut);
+		super.onSaveInstanceState(savedInstanceState);
+	}
+
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState) {
+		super.onRestoreInstanceState(savedInstanceState);
+		// Restore UI state from the savedInstanceState.
+		// This bundle has also been passed to onCreate.
+		stringOut = readFromFile();
+		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup1);
+
+		if (stringOut.equals("walking"))
+			radioGroup.check(R.id.radio_walking);
+
+		else if (stringOut.equals("cycling"))
+			radioGroup.check(R.id.radio_cycling);
+
+		else if (stringOut.equals("tram"))
+			radioGroup.check(R.id.radio_tram);
+
+		else if (stringOut.equals("train"))
+			radioGroup.check(R.id.radio_train);
+
+		else if (stringOut.equals("bus"))
+			radioGroup.check(R.id.radio_bus);
+
+		else if (stringOut.equals("car_passenger"))
+			radioGroup.check(R.id.radio_car_passenger);
+
+		else if (stringOut.equals("car_driver"))
+			radioGroup.check(R.id.radio_car_driver);
+
+		else if (stringOut.equals("waiting_mode"))
+			radioGroup.check(R.id.radio_waiting_mode);
+
+		else if (stringOut.equals("not_travelling"))
+			radioGroup.check(R.id.radio_not_travelling);
+	}

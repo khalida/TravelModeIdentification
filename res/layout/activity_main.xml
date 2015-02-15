@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="khalid.abdulla.travelmodeidentification.MainActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/travel_mode_q" />
+
+    <ScrollView 
+    android:id="@+id/scrollview_choices"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:layout_below="@+id/textView1"       
+    android:layout_above="@+id/send_button"
+    >
+    
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/radioGroup1">
+		
+        
+        <RadioButton
+        	android:height="100dp"
+            android:id="@+id/radio_walking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/walking" />
+
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_cycling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/cycling" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_tram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/tram" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/train" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/bus" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_car_passenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/car_passenger" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_car_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/car_driver" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_waiting_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/waiting_mode" />
+        
+        <RadioButton
+            android:height="100dp"
+            android:id="@+id/radio_not_travelling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/not_travelling" />        
+    </RadioGroup>
+
+    </ScrollView>
+    
+	<Button
+	    android:id="@+id/send_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:onClick="sendMessage"
+	    android:text="@string/send_button"
+	    android:layout_alignParentBottom="true" />
+    
+</RelativeLayout>
